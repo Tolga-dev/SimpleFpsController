@@ -1,4 +1,6 @@
+
 * Gun 
+  * make it state machine
   * data base
   * Gun mechanics
   * Gun effects

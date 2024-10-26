@@ -5,12 +5,15 @@ namespace GameObjects.Ammo.Base
 {
     public class AmmoBaseInGame : MonoBehaviour
     {
-        private AmmoData ammoData;
+        public AmmoData ammoData;
+        public float gunDamage;
+        public Rigidbody rb;
+        
         public void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag("Player"))
             {
-                Debug.Log(ammoData.damage);
+                Debug.Log(ammoData.damage + gunDamage);
             }
         }
     }

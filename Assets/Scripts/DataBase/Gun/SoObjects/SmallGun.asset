@@ -15,12 +15,12 @@ MonoBehaviour:
   gunName: SmallGun
   damage: 10
   ammoData: {fileID: 11400000, guid: ee65debf41e8b2d318579fcdd5b2cc69, type: 2}
-  magSize: 1000
-  currentAmountOfAmmo: 100
-  fireRate: 1
+  magSize: 10
+  currentAmountOfAmmo: 0
+  fireRate: 0.1
   reloadTime: 1
   reloading: 0
-  timeSinceLastShot: 0
+  timeSinceLastShot: 4.7157383
   shootingLayers:
     serializedVersion: 2
     m_Bits: 4294967295

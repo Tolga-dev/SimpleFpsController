@@ -1,64 +1,50 @@
+using System;
 using System.Collections;
 using DataBase.Gun;
+using GameObjects.Ammo.Base;
+using GameObjects.Guns.Base.States;
+using Manager;
 using UnityEngine;
 
-namespace GameObjects.Guns.Base
+namespace GameObjects.Guns.Base 
 {
     public class GunBase : ObjectBase.ObjectBase
     {
+        [Header("States")]
+        public FireState fireState;
+        public ReloadState reloadState;
+        public IdleState idleState;
+        public BaseState baseState;
+        
         [Header("Data")]
         public GunData gunData;
 
+        public GunInput gunInput;
+        
         public Transform shootingSpawnPoint;
+    
+        private void Start()
+        {
+            fireState = new FireState(this);
+            reloadState = new ReloadState(this);
+            idleState = new IdleState(this);
+            gunInput = new GunInput(this);
+            
+            SwitchNewState(idleState);
+        }
 
         private void Update()
         {
-            gunData.timeSinceLastShot += Time.deltaTime;
-            
-            GunShootingAction();
-
-            if (Input.GetKeyDown(KeyCode.R))
-                ReloadGun();
-            
-        }
-        private void ReloadGun()
-        {
-            if (!gunData.reloading) StartCoroutine(Reload());
+            gunInput.GunUpdateInput();
+            baseState.OnStateUpdate();
         }
         
-        private void GunShootingAction()
+        public void SwitchNewState(BaseState newState)
         {
-            if (!CanShoot()) return;
-            
-            SpawnAmmo();
-            
-            gunData.currentAmountOfAmmo--;
-            gunData.timeSinceLastShot = 0;
+            baseState?.OnStateExit();
+            baseState = newState;
+            baseState.OnStateEnter();
         }
-        private void SpawnAmmo()
-        {
-            var spawnedAmmo = Instantiate(gunData.ammoData.ammo, shootingSpawnPoint.position,
-                shootingSpawnPoint.rotation);
-            
-            if (spawnedAmmo.TryGetComponent<Rigidbody>(out var rb))
-            {
-                rb.AddForce(transform.forward * gunData.ammoData.ammoSpeed, ForceMode.Impulse);
-            }
-            
-        }
-        private bool CanShoot() => 
-            gunData.reloading == false && 
-            gunData.timeSinceLastShot > gunData.fireRate && 
-            gunData.currentAmountOfAmmo > 0;
         
-        private IEnumerator Reload() {
-            gunData.reloading = true;
-
-            yield return new WaitForSeconds(gunData.reloadTime);
-
-            gunData.currentAmountOfAmmo = gunData.magSize;
-
-            gunData.reloading = false;
-        }
     }
 }
