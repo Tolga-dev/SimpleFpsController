@@ -1,4 +1,4 @@
-using Guns.Base;
+using GameObjects.Guns.Base;
 using UnityEngine;
 
 namespace Guns

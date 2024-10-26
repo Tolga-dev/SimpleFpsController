@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Guns.Base
+namespace GameObjects.Guns.Base
 {
     public class LightGunBase : MonoBehaviour
     {

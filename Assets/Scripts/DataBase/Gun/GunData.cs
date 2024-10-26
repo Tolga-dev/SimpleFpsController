@@ -1,6 +1,7 @@
+using DataBase.Ammo;
 using UnityEngine;
 
-namespace Data
+namespace DataBase.Gun
 {
     [CreateAssetMenu(fileName = "GunData", menuName = "Gun/GunData", order = 0)]
     public class GunData : ScriptableObject
@@ -10,13 +11,11 @@ namespace Data
 
         [Header("Shooting")]
         public float damage;
-        public float maxDistance;
-        
-        [Header("Ammo")]
-        public int currentAmmo;
+
+        [Header("Ammo")] 
+        public AmmoData ammoData;
         public int magSize;
-        public GameObject ammo;
-        public float ammoSpeed;
+        public int currentAmountOfAmmo;
         
         [Header("Reloading")]
         public float fireRate;
@@ -27,6 +26,6 @@ namespace Data
         public float timeSinceLastShot;
 
         public LayerMask shootingLayers;
-
+        
     }
 }

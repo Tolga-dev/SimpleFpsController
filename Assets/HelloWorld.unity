@@ -123,6 +123,66 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &313109480
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 313109483}
+  - component: {fileID: 313109482}
+  - component: {fileID: 313109481}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &313109481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 313109480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea4ae1fcfdb94324b5ca7821bf983a50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunsDataBase: {fileID: 11400000, guid: b7f306c02504f18b285c0deec2ed9966, type: 2}
+  ammoDataBase: {fileID: 11400000, guid: f8d1f5d7f3628100e964fdd1c40a78b7, type: 2}
+--- !u!114 &313109482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 313109480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 675458737a114b5cb296667bc5a270f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dataBaseManager: {fileID: 313109481}
+--- !u!4 &313109483
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 313109480}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.3417563, y: 3.6390686, z: -1.5937258}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &689904011
 GameObject:
   m_ObjectHideFlags: 0
@@ -449,12 +509,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92665de1813344e3bf11e8cfeac18f20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 313109482}
   gunData: {fileID: 11400000, guid: afddd5cc8004faa1d8fe4ba601a98786, type: 2}
-  shootingLineRenderer: {fileID: 920206509}
-  camPos: {fileID: 689904014}
   shootingSpawnPoint: {fileID: 1843878795}
-  holdPlacePoint: {fileID: 1843878795}
-  ammoBase: {fileID: 0}
 --- !u!1 &1843878791
 GameObject:
   m_ObjectHideFlags: 0
@@ -533,7 +590,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.6043283}
-  m_LocalScale: {x: 0.7271579, y: 0.8821864, z: 0.11536755}
+  m_LocalScale: {x: 0.11506547, y: 0.13959718, z: 0.01825576}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 920206508}
@@ -744,3 +801,4 @@ SceneRoots:
   m_Roots:
   - {fileID: 767942436}
   - {fileID: 920206508}
+  - {fileID: 313109483}
