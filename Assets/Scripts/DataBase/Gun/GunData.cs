@@ -27,5 +27,12 @@ namespace DataBase.Gun
 
         public LayerMask shootingLayers;
         
+        [Header("Recoil")]
+        public Vector3 recoilBack = new Vector3(0, 0, -0.1f); // Amount gun moves back
+        public float returnSpeed = 20f; // Speed of recoil return
+        
+        public float recoilAmount = 5f;          // Base vertical recoil intensity
+        public float horizontalRecoilAmount = 2f; // Base horizontal recoil intensity
+        public float recoilRecovery = 2f;        // Speed of recovery
     }
 }

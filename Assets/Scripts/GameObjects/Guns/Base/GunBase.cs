@@ -8,6 +8,7 @@ using UnityEngine;
 
 namespace GameObjects.Guns.Base 
 {
+    [Serializable]
     public class GunBase : ObjectBase.ObjectBase
     {
         [Header("States")]
@@ -25,9 +26,9 @@ namespace GameObjects.Guns.Base
     
         private void Start()
         {
-            fireState = new FireState(this);
-            reloadState = new ReloadState(this);
-            idleState = new IdleState(this);
+            fireState.Starter(this);
+            reloadState.Starter(this);
+            idleState.Starter(this);
             gunInput = new GunInput(this);
             
             SwitchNewState(idleState);

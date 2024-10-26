@@ -1,18 +1,20 @@
+using System;
 using DataBase.Gun;
 using Manager;
 using UnityEngine;
 
 namespace GameObjects.Guns.Base.States
 {
+    [Serializable]
     public class BaseState
     {
         protected GameManager gameManager;
         protected GunBase gunBase;
         protected GunData gunData;
         
-        public BaseState(GunBase gunBase)
+        public virtual void Starter(GunBase gunBase1)
         {
-            this.gunBase = gunBase;
+            gunBase = gunBase1;
             gameManager = gunBase.gameManager;
             gunData = gunBase.gunData;
         }

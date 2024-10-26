@@ -1,15 +1,12 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
 namespace GameObjects.Guns.Base.States
 {
+    [Serializable]
     public class ReloadState : BaseState
     {
-        public ReloadState(GunBase gunBase) : base(gunBase)
-        {
-            
-        }
-        
         public override void OnStateEnter()
         {
             ReloadGun();
