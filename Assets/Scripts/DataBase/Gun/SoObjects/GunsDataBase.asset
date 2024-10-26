@@ -14,3 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunData:
   - {fileID: 11400000, guid: afddd5cc8004faa1d8fe4ba601a98786, type: 2}
+  shootingModeBases:
+  - {fileID: 11400000, guid: 65c91ef1f78967ffa93fe3d690c6e4e7, type: 2}
+  - {fileID: 11400000, guid: 664ee7da70d490a30b95aeba0d04708d, type: 2}
+  - {fileID: 11400000, guid: 0bd39aa54e6c3f104abfb21ab50a5e2a, type: 2}

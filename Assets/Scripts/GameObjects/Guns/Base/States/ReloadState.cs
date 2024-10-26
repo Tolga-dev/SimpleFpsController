@@ -19,7 +19,7 @@ namespace GameObjects.Guns.Base.States
         private IEnumerator Reload() {
             gunData.reloading = true;
 
-            yield return new WaitForSeconds(gunData.reloadTime);
+            yield return new WaitForSeconds(gunData.GetCurrentMode().reloadTime);
 
             gunData.currentAmountOfAmmo = gunData.magSize;
 

@@ -1,9 +1,7 @@
 using System;
-using System.Collections;
 using DataBase.Gun;
-using GameObjects.Ammo.Base;
+using GameObjects.Guns.Base.Modes;
 using GameObjects.Guns.Base.States;
-using Manager;
 using UnityEngine;
 
 namespace GameObjects.Guns.Base 
@@ -20,10 +18,11 @@ namespace GameObjects.Guns.Base
         [Header("Data")]
         public GunData gunData;
 
+        public Transform shootingSpawnPoint;
+        
         public GunInput gunInput;
         
-        public Transform shootingSpawnPoint;
-    
+        
         private void Start()
         {
             fireState.Starter(this);
@@ -46,6 +45,21 @@ namespace GameObjects.Guns.Base
             baseState = newState;
             baseState.OnStateEnter();
         }
-        
+
+        public void SwitchToNextShootMode()
+        {
+            fireState.SwitchToNextShootMode();
+        }
+
+        public void NonInputMode()
+        {
+            SwitchNewState(idleState);
+        }
+
+        public void AttackInputMode()
+        {
+            SwitchNewState(fireState);
+
+        }
     }
 }

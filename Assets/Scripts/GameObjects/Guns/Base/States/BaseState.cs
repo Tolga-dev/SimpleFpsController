@@ -11,12 +11,14 @@ namespace GameObjects.Guns.Base.States
         protected GameManager gameManager;
         protected GunBase gunBase;
         protected GunData gunData;
+        protected GunsDataBase gunsDataBase;
         
         public virtual void Starter(GunBase gunBase1)
         {
             gunBase = gunBase1;
             gameManager = gunBase.gameManager;
             gunData = gunBase.gunData;
+            gunsDataBase = gunBase1.gameManager.dataBaseManager.gunsDataBase;
         }
 
         public virtual void OnStateEnter() { }

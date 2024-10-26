@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using DataBase.Ammo;
+using GameObjects.Guns.Base.Modes;
 using UnityEngine;
 
 namespace DataBase.Gun
@@ -17,10 +19,6 @@ namespace DataBase.Gun
         public int magSize;
         public int currentAmountOfAmmo;
         
-        [Header("Reloading")]
-        public float fireRate;
-        public float reloadTime;
-        
         [Header("State")]
         public bool reloading;
         public float timeSinceLastShot;
@@ -34,5 +32,19 @@ namespace DataBase.Gun
         public float recoilAmount = 5f;          // Base vertical recoil intensity
         public float horizontalRecoilAmount = 2f; // Base horizontal recoil intensity
         public float recoilRecovery = 2f;        // Speed of recovery
+        
+        public List<ShootingModeBase> shootingModeBases = new List<ShootingModeBase>();
+        public int currentModeIndex;
+
+        public ShootingModeBase GetCurrentMode()
+        {
+            return shootingModeBases[currentModeIndex];
+        }
+        public void SwitchAnotherMode()
+        {
+            currentModeIndex = (currentModeIndex + 1) % shootingModeBases.Count;
+            Debug.Log(GetCurrentMode().modeName);
+        }
+        
     }
 }

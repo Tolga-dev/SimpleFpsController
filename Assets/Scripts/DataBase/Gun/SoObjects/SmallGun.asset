@@ -16,9 +16,7 @@ MonoBehaviour:
   damage: 10
   ammoData: {fileID: 11400000, guid: ee65debf41e8b2d318579fcdd5b2cc69, type: 2}
   magSize: 1000
-  currentAmountOfAmmo: 569
-  fireRate: 0.1
-  reloadTime: 1
+  currentAmountOfAmmo: 230
   reloading: 0
   timeSinceLastShot: 0
   shootingLayers:
@@ -29,3 +27,7 @@ MonoBehaviour:
   recoilAmount: 1
   horizontalRecoilAmount: 1
   recoilRecovery: 5
+  shootingModeBases:
+  - {fileID: 11400000, guid: 65c91ef1f78967ffa93fe3d690c6e4e7, type: 2}
+  - {fileID: 11400000, guid: 0bd39aa54e6c3f104abfb21ab50a5e2a, type: 2}
+  currentModeIndex: 0
