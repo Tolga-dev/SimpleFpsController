@@ -33,9 +33,18 @@ namespace DataBase.Gun
         public float horizontalRecoilAmount = 2f; // Base horizontal recoil intensity
         public float recoilRecovery = 2f;        // Speed of recovery
         
+        [Header("Modes")]
         public List<ShootingModeBase> shootingModeBases = new List<ShootingModeBase>();
         public int currentModeIndex;
-
+        
+        [Header("Cool Down")]
+        public float coolDownTime;
+        public bool isOverheated;
+        public float heatPerShot = 10f; // Heat added per shot
+        public float maxHeat = 100f; // Max heat before gun jams or overheats
+        public float coolingRate = 5f; // Rate at which heat dissipates
+        public float currentHeat = 0f; // Current heat level
+        
         public ShootingModeBase GetCurrentMode()
         {
             return shootingModeBases[currentModeIndex];

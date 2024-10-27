@@ -21,8 +21,8 @@ namespace GameObjects.Guns.Base
         public Transform shootingSpawnPoint;
         
         public GunInput gunInput;
-        
-        
+
+
         private void Start()
         {
             fireState.Starter(this);

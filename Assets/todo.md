@@ -7,6 +7,7 @@
     * Add burst-fire, full-auto, or single-shot or safety mode
       * Add auto clicker prevent 
     * Implement overheating or jamming
+      * last time cooldown is on switching gun
     * Aim Down Sights
     * Melee Options
   * Gun effects
