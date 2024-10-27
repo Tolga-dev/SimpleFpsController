@@ -60,7 +60,7 @@ namespace GameObjects.Guns.Base.States
         {
             if (!CanShoot()) return;
 
-            if (gunData.isOverheated)
+            if (gunData.isOverheated || gunData.isJammed)
             {
                 gunBase.SwitchNewState(gunBase.idleState);
                 return;
@@ -83,13 +83,29 @@ namespace GameObjects.Guns.Base.States
             gunData.currentHeat += gunData.heatPerShot;
             if (gunData.currentHeat >= gunData.maxHeat)
             {
+                gunData.amountOfOverHeatTimes++;
                 gunData.isOverheated = true;
                 Debug.Log("Gun has overheated!");
+                
+            }
+
+            if (gunData.maxOverHeatTimeForJamChecking < gunData.amountOfOverHeatTimes)
+            {
+                gunData.amountOfOverHeatTimes = 0;
+                if (Random.value < gunData.jamProbability)
+                {
+                    gunData.isJammed = true;
+                    gunData.currentJammedTime = gunData.jamFixTime;
+                    
+                    Debug.Log("Gun has jammed!");
+                    return;
+                }               
             }
                         
             gunData.currentAmountOfAmmo--;
             gunData.timeSinceLastShot = 0;
         }
+        
         private bool CanShoot() => 
             gunData.reloading == false && 
             gunData.timeSinceLastShot > gunData.GetCurrentMode().fireRate && 

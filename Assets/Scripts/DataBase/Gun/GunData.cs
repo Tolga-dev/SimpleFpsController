@@ -44,7 +44,17 @@ namespace DataBase.Gun
         public float maxHeat = 100f; // Max heat before gun jams or overheats
         public float coolingRate = 5f; // Rate at which heat dissipates
         public float currentHeat = 0f; // Current heat level
-        
+        public int amountOfOverHeatTimes;
+
+        [Header("Jam")] 
+        public int maxOverHeatTimeForJamChecking;
+        public float jamProbability;
+        public bool isJammed;
+        public float currentJammedTime;
+        public float jamFixTime;
+        public float jamFixTimeRate = 5f; // Rate at which heat dissipates
+
+
         public ShootingModeBase GetCurrentMode()
         {
             return shootingModeBases[currentModeIndex];

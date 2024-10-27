@@ -16,9 +16,9 @@ MonoBehaviour:
   damage: 10
   ammoData: {fileID: 11400000, guid: ee65debf41e8b2d318579fcdd5b2cc69, type: 2}
   magSize: 1000
-  currentAmountOfAmmo: 51
+  currentAmountOfAmmo: 229
   reloading: 0
-  timeSinceLastShot: 0.053780157
+  timeSinceLastShot: 0.5153646
   shootingLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -35,5 +35,12 @@ MonoBehaviour:
   isOverheated: 0
   heatPerShot: 10
   maxHeat: 100
-  coolingRate: 10
+  coolingRate: 100
   currentHeat: 0
+  amountOfOverHeatTimes: 2
+  maxOverHeatTimeForJamChecking: 2
+  jamProbability: 0.1
+  isJammed: 0
+  currentJammedTime: -0.09807524
+  jamFixTime: 10
+  jamFixTimeRate: 5
