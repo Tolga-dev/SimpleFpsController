@@ -9,7 +9,7 @@ namespace GameObjects.HealthPack
         public void PickupHealth(SimpleFPSController.SimpleFPSController player)
         {
             player.currentHealth += playerHealth;
-            player.currentHealth = 
+            player.currentHealth =      
                 Mathf.Clamp(player.currentHealth, 0, player.maxHealth); // Cap health at maxHealth
             Debug.Log("Picked up health pack!");
         }

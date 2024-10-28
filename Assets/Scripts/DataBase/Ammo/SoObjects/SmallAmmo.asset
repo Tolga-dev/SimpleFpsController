@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: SmallAmmo
   m_EditorClassIdentifier: 
   ammoName: SmallAmmo
-  ammoSpeed: 10
+  ammoSpeed: 100
   ammo: {fileID: 5878499317520153299, guid: f6e062da90b5824618a8784efc645b51, type: 3}
   damage: 100
