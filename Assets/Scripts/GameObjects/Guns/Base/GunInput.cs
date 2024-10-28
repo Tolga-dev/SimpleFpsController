@@ -24,6 +24,7 @@ namespace GameObjects.Guns.Base
             else if (Input.GetKeyDown(KeyCode.A))
                 currentGunBase.SwitchToNextShootMode();
         }
+        
     }
     
 }

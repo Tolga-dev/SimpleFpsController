@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: FullAuto
   m_EditorClassIdentifier: 
   modeName: Full Auto
-  fireRate: 0.5
+  fireRate: 0.1
   reloadTime: 1

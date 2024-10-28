@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Single
   m_EditorClassIdentifier: 
   modeName: Single
-  fireRate: 1
+  fireRate: 0.1
   reloadTime: 1

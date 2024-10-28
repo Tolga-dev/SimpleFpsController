@@ -9,15 +9,27 @@
     * Implement overheating or jamming
       * last time cooldown is on switching gun
     * Aim Down Sights
+      * do this when player is added
     * Melee Options
-  * Gun effects
+      * player ile beraber eklenecek
 * Ammo
   * Ammo mechanics
-  * Ammo effects
+  * Ammo effects 
   * Ammo data base
-* Player
-  * Mechanics
-  * Player effects
-* Npc
-  * Mechanics
-  * Npc effects
+  * obj pool
+* Player 
+  * Mechanicss
+    * Movement
+      * Add Basic Movements
+        * Rotation
+        * Add walking -ok
+        * Add sprinting - ok
+        * Add crouch -ok 
+        * Add jumping * ok
+        * Add slide - ok
+        * Add prone - ok
+        * Add lean - ok
+        * Add climbing -ok
+    * Health
+      * Add health regeneration -ok
+      * Add health packs -ok
