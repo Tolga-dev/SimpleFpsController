@@ -1,12 +1,10 @@
-using GameObjects.Player;
-using UnityEditor;
-using UnityEngine;
+using UnityEngine;using UnityEditor;
+
 
 namespace Manager
 {
     public class GameManager : MonoBehaviour
     {
         public DataBaseManager dataBaseManager;
-        public PlayerManager playerManager;
     }
 }

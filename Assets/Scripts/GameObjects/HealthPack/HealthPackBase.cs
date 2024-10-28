@@ -1,3 +1,4 @@
+using GameObjects.Player;
 using UnityEngine;
 
 namespace GameObjects.HealthPack
@@ -6,11 +7,11 @@ namespace GameObjects.HealthPack
     {
         public float playerHealth;
         
-        public void PickupHealth(SimpleFPSController.SimpleFPSController player)
+        public void PickupHealth(SimpleFPSController player)
         {
-            player.currentHealth += playerHealth;
-            player.currentHealth =      
-                Mathf.Clamp(player.currentHealth, 0, player.maxHealth); // Cap health at maxHealth
+            player.playerHealthController.currentHealth += playerHealth;
+            player.playerHealthController.currentHealth =      
+                Mathf.Clamp(player.playerHealthController.currentHealth, 0, player.playerHealthController.maxHealth); // Cap health at maxHealth
             Debug.Log("Picked up health pack!");
         }
     }
