@@ -41,6 +41,9 @@ namespace GameObjects.Guns.Base
         
         public void SwitchNewState(BaseState newState)
         {
+            if (newState == baseState)
+                return;
+            
             baseState?.OnStateExit();
             baseState = newState;
             baseState.OnStateEnter();
@@ -59,7 +62,6 @@ namespace GameObjects.Guns.Base
         public void AttackInputMode()
         {
             SwitchNewState(fireState);
-
         }
     }
 }

@@ -13,16 +13,15 @@ namespace GameObjects.Guns.Base
 
         public void GunUpdateInput()
         {
-            if (Input.anyKey == false)
-                currentGunBase.NonInputMode();
-
-            if (Input.GetKeyDown(KeyCode.Mouse0))
-                currentGunBase.AttackInputMode();
-
             if (Input.GetKeyDown(KeyCode.R))
                 currentGunBase.SwitchNewState(currentGunBase.reloadState);
-            else if (Input.GetKeyDown(KeyCode.A))
+            else if (Input.GetKeyDown(KeyCode.Alpha1))
                 currentGunBase.SwitchToNextShootMode();
+            
+            if (Input.GetKey(KeyCode.Mouse0))
+                currentGunBase.AttackInputMode();
+            else
+                currentGunBase.NonInputMode();
         }
         
     }

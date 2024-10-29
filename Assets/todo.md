@@ -1,8 +1,4 @@
 - Player states
-  * Attack
-    * Melee
-    * Gun
-      * Mass
   * Movement
     * Walk
     * Run
@@ -11,11 +7,17 @@
     * Prone
       * Fast Prone
     * Slide
+    * Prone
+    * Jump
+    * Leaning left right
+    * Climbing
+    * Idle
   * Drinkable Stuffs
     * Booster
   * Health Stuffs
     * Pack
     * Small Pack
+    
 - Gun States
   - ?
 
