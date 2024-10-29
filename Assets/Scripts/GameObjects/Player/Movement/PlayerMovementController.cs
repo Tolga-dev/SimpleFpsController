@@ -18,6 +18,7 @@ namespace GameObjects.Player.Movement
         public PlayerJumpState playerJumpState;
         public PlayerCrouchState playerCrouchState;
         public PlayerSprintState playerSprintState;
+        public PayerIdleState payerIdleState;
         
         public float originalHeight;
         public bool isGrounded;
@@ -92,6 +93,11 @@ namespace GameObjects.Player.Movement
             {
                 SwitchState(playerClimbingState);
             }
+            else
+            {
+                if(input.z == 0 && input.x ==0 )    
+                    SwitchState(payerIdleState);
+            }
             
             if (input.isRunning)
             {
@@ -104,6 +110,10 @@ namespace GameObjects.Player.Movement
             if (input.isJumping)
             {
                 SwitchState(playerJumpState);
+            }
+            if (input.isIdle)
+            {
+                SwitchState(payerIdleState);
             }
         }
 

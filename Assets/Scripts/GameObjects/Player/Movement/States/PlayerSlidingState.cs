@@ -10,8 +10,7 @@ namespace GameObjects.Player.Movement.States
         public float slideDuration = 0.5f;
         public float slideCooldown = 1f;
         private float slideTimer = 0;
-        private bool isSliding = false;
-        private float originalHeight;
+        private bool canSlide = false;
         public float slideHeight = 0.5f;
         
         public override void Update()
@@ -22,31 +21,35 @@ namespace GameObjects.Player.Movement.States
             {
                 StartSlide();
             }
-            
-            if (isSliding)
+
+            if (canSlide)
             {
                 movementController.move *= slideSpeedMultiplier;
                 slideTimer -= Time.deltaTime;
                 if (slideTimer <= 0)
                 {
-                    StopSlide();
+                    Exit();
                 }
             }
 
         }
-        
+
+        public override void Exit()
+        {
+            StopSlide();
+        }
         private void StartSlide()
         {
-            isSliding = true;
+            canSlide = true;
             slideTimer = slideDuration;
             charController.height = slideHeight;
         }
 
         private void StopSlide()
         {
-            isSliding = false;
+            canSlide = false;
             slideTimer = -slideCooldown; // Set cooldown time
-            charController.height = originalHeight;
+            charController.height = movementController.originalHeight;
         }
         
         

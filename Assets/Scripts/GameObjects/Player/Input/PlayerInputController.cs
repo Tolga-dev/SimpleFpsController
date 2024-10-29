@@ -14,7 +14,8 @@ namespace GameObjects.Player.Input
         public bool isLeaningLeft;
         public bool isLeaningRight;
         public bool isClimbing;
-
+        public bool isIdle;
+        
         public float mouseX;
         public float mouseY;
 
@@ -34,7 +35,7 @@ namespace GameObjects.Player.Input
             isJumping = UnityEngine.Input.GetKey(jumpKey);
             isRunning = UnityEngine.Input.GetKey(runKey);
             isCrouching = UnityEngine.Input.GetKey(crouchKey);
-            isSliding = UnityEngine.Input.GetKeyDown(slideKey);
+            isSliding = UnityEngine.Input.GetKey(slideKey);
             isProne = UnityEngine.Input.GetKey(proneKey);
             isLeaningLeft = UnityEngine.Input.GetKey(leanLeftKey);
             isLeaningRight = UnityEngine.Input.GetKey(leanRightKey);
